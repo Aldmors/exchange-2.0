@@ -59,6 +59,10 @@
             "MudBlazor": {
               "target": "Package",
               "version": "[6.*, )"
+            },
+            "Radzen.Blazor": {
+              "target": "Package",
+              "version": "[4.31.1, )"
             }
           },
           "imports": [
@@ -135,6 +139,10 @@
             "Microsoft.AspNetCore.Components.WebAssembly.Server": {
               "target": "Package",
               "version": "[8.*, )"
+            },
+            "Radzen.Blazor": {
+              "target": "Package",
+              "version": "[4.31.1, )"
             }
           },
           "imports": [

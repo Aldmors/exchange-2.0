@@ -9,11 +9,11 @@ namespace ExchangeServer.Models
         public string FirstName { get; set; }
         public string SecondName { get; set; }
         public string Email { get; set; }
-        public int Password { get; set; }
-        public int Permission { get; set; }
-        public int Group { get; set; }
+        public Authentication Password { get; set; }
+        public Permission Permission { get; set; }
+        public Group Group { get; set; }
         public int Status { get; set; }
-        [DataType(DataType.Date)]
+
         public DateTime CreateTime { get; set; }
 
     }

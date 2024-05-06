@@ -10,7 +10,7 @@ namespace ExchangeServer.Models
         public string Status { get; set; }
         public string Country { get; set; }
 
-        [DataType(DataType.Date)]
+
         public DateTime CreateTime { get; set; }
     }
 }

@@ -5,6 +5,6 @@
         public int GroupId { get; set; }
         public required string GroupName { get; set; }
         public string Description { get; set; }
-        public int Permission { get; set; }
+        public Permission Permission { get; set; }
     }
 }

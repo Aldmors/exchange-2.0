@@ -9,8 +9,6 @@ namespace ExchangeServer.Models
         public string ShippingId { get; set; }
         public string Status { get; set; }
         public string Country { get; set; }
-
-
         public DateTime CreateTime { get; set; }
     }
 }

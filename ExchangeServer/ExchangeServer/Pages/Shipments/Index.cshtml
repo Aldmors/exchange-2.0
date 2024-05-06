@@ -1,0 +1,42 @@
+﻿@page
+@model ExchangeServer.Pages.Shipments.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Shipment[0].Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Shipment[0].CreateTime)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Shipment) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreateTime)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ShipmentId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ShipmentId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ShipmentId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

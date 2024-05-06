@@ -13,7 +13,6 @@ namespace ExchangeServer.Models
         public Permission Permission { get; set; }
         public Group Group { get; set; }
         public int Status { get; set; }
-
         public DateTime CreateTime { get; set; }
 
     }

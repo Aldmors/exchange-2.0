@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "E:\\source\\repos\\exchange-2.0\\exchangeFront\\exchangeFront\\exchangeFront.csproj": {}
+    "C:\\Users\\kubzi\\source\\repos\\exchange-2.0\\exchangeFront\\exchangeFront\\exchangeFront.csproj": {}
   },
   "projects": {
-    "E:\\source\\repos\\exchange-2.0\\exchangeFront\\exchangeFront.Client\\exchangeFront.Client.csproj": {
+    "C:\\Users\\kubzi\\source\\repos\\exchange-2.0\\exchangeFront\\exchangeFront.Client\\exchangeFront.Client.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\source\\repos\\exchange-2.0\\exchangeFront\\exchangeFront.Client\\exchangeFront.Client.csproj",
+        "projectUniqueName": "C:\\Users\\kubzi\\source\\repos\\exchange-2.0\\exchangeFront\\exchangeFront.Client\\exchangeFront.Client.csproj",
         "projectName": "exchangeFront.Client",
-        "projectPath": "E:\\source\\repos\\exchange-2.0\\exchangeFront\\exchangeFront.Client\\exchangeFront.Client.csproj",
-        "packagesPath": "C:\\Users\\kacper\\.nuget\\packages\\",
-        "outputPath": "E:\\source\\repos\\exchange-2.0\\exchangeFront\\exchangeFront.Client\\obj\\",
+        "projectPath": "C:\\Users\\kubzi\\source\\repos\\exchange-2.0\\exchangeFront\\exchangeFront.Client\\exchangeFront.Client.csproj",
+        "packagesPath": "C:\\Users\\kubzi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\kubzi\\source\\repos\\exchange-2.0\\exchangeFront\\exchangeFront.Client\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\kacper\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\kubzi\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -47,13 +47,13 @@
             "Microsoft.NET.ILLink.Tasks": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[8.0.1, )",
+              "version": "[8.0.0, )",
               "autoReferenced": true
             },
             "Microsoft.NET.Sdk.WebAssembly.Pack": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[8.0.1, )",
+              "version": "[8.0.0, )",
               "autoReferenced": true
             },
             "MudBlazor": {
@@ -79,7 +79,7 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.NETCore.App.Runtime.Mono.browser-wasm",
-              "version": "[8.0.1, 8.0.1]"
+              "version": "[8.0.0, 8.0.0]"
             }
           ],
           "frameworkReferences": {
@@ -87,7 +87,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
         }
       },
       "runtimes": {
@@ -96,17 +96,17 @@
         }
       }
     },
-    "E:\\source\\repos\\exchange-2.0\\exchangeFront\\exchangeFront\\exchangeFront.csproj": {
+    "C:\\Users\\kubzi\\source\\repos\\exchange-2.0\\exchangeFront\\exchangeFront\\exchangeFront.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\source\\repos\\exchange-2.0\\exchangeFront\\exchangeFront\\exchangeFront.csproj",
+        "projectUniqueName": "C:\\Users\\kubzi\\source\\repos\\exchange-2.0\\exchangeFront\\exchangeFront\\exchangeFront.csproj",
         "projectName": "exchangeFront",
-        "projectPath": "E:\\source\\repos\\exchange-2.0\\exchangeFront\\exchangeFront\\exchangeFront.csproj",
-        "packagesPath": "C:\\Users\\kacper\\.nuget\\packages\\",
-        "outputPath": "E:\\source\\repos\\exchange-2.0\\exchangeFront\\exchangeFront\\obj\\",
+        "projectPath": "C:\\Users\\kubzi\\source\\repos\\exchange-2.0\\exchangeFront\\exchangeFront\\exchangeFront.csproj",
+        "packagesPath": "C:\\Users\\kubzi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\kubzi\\source\\repos\\exchange-2.0\\exchangeFront\\exchangeFront\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\kacper\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\kubzi\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -120,8 +120,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "E:\\source\\repos\\exchange-2.0\\exchangeFront\\exchangeFront.Client\\exchangeFront.Client.csproj": {
-                "projectPath": "E:\\source\\repos\\exchange-2.0\\exchangeFront\\exchangeFront.Client\\exchangeFront.Client.csproj"
+              "C:\\Users\\kubzi\\source\\repos\\exchange-2.0\\exchangeFront\\exchangeFront.Client\\exchangeFront.Client.csproj": {
+                "projectPath": "C:\\Users\\kubzi\\source\\repos\\exchange-2.0\\exchangeFront\\exchangeFront.Client\\exchangeFront.Client.csproj"
               }
             }
           }
@@ -164,7 +164,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

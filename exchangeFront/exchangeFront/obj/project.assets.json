@@ -1670,19 +1670,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\kacper\\.nuget\\packages\\": {}
+    "C:\\Users\\kubzi\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\source\\repos\\exchange-2.0\\exchangeFront\\exchangeFront\\exchangeFront.csproj",
+      "projectUniqueName": "C:\\Users\\kubzi\\source\\repos\\exchange-2.0\\exchangeFront\\exchangeFront\\exchangeFront.csproj",
       "projectName": "exchangeFront",
-      "projectPath": "E:\\source\\repos\\exchange-2.0\\exchangeFront\\exchangeFront\\exchangeFront.csproj",
-      "packagesPath": "C:\\Users\\kacper\\.nuget\\packages\\",
-      "outputPath": "E:\\source\\repos\\exchange-2.0\\exchangeFront\\exchangeFront\\obj\\",
+      "projectPath": "C:\\Users\\kubzi\\source\\repos\\exchange-2.0\\exchangeFront\\exchangeFront\\exchangeFront.csproj",
+      "packagesPath": "C:\\Users\\kubzi\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\kubzi\\source\\repos\\exchange-2.0\\exchangeFront\\exchangeFront\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\kacper\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\kubzi\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1696,8 +1696,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "E:\\source\\repos\\exchange-2.0\\exchangeFront\\exchangeFront.Client\\exchangeFront.Client.csproj": {
-              "projectPath": "E:\\source\\repos\\exchange-2.0\\exchangeFront\\exchangeFront.Client\\exchangeFront.Client.csproj"
+            "C:\\Users\\kubzi\\source\\repos\\exchange-2.0\\exchangeFront\\exchangeFront.Client\\exchangeFront.Client.csproj": {
+              "projectPath": "C:\\Users\\kubzi\\source\\repos\\exchange-2.0\\exchangeFront\\exchangeFront.Client\\exchangeFront.Client.csproj"
             }
           }
         }
@@ -1740,7 +1740,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

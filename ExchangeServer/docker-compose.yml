@@ -1,0 +1,19 @@
+version: '3.4'
+
+services:
+  exchangeserver:
+    image: ${DOCKER_REGISTRY-}exchangeserver
+    build:
+      context: .
+      dockerfile: ExchangeServer/Dockerfile
+
+  postgres:
+    image: postgres
+    environment:
+      - POSTGRES_USER=app
+      - POSTGRES_PASSWORD=app
+      - POSTGRES_DB=mydbname
+    volumes:
+      - ./volumes/data/db:/var/lib/postgresql/data
+    ports:
+       - 5432:5432

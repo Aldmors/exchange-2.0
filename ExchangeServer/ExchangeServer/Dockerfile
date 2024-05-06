@@ -10,7 +10,7 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
 COPY ["ExchangeServer/ExchangeServer.csproj", "ExchangeServer/"]
-RUN dotnet restore "./ExchangeServer/./ExchangeServer.csproj"
+RUN dotnet restore "./ExchangeServer/ExchangeServer.csproj"
 COPY . .
 WORKDIR "/src/ExchangeServer"
 RUN dotnet build "./ExchangeServer.csproj" -c $BUILD_CONFIGURATION -o /app/build

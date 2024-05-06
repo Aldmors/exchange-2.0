@@ -9,7 +9,7 @@ builder.Services.AddRazorPages();
 
 builder.Services.AddDbContext<ExchangeServerContext>(options =>
 
-    options.UseNpgsql(builder.Configuration.GetConnectionString("ExchangeServerContext") ?? throw new InvalidOperationException("Connection string 'ExchangeServerContext' not found.")));
+    options.UseNpgsql(builder.Configuration.GetSection("DatabaseConfig")["PostgresSQL"] ?? throw new InvalidOperationException("Connection string 'ExchangeServerContext' not found.")));
 
 var app = builder.Build();
 

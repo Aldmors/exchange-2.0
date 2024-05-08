@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using ExchangeServer.Data;
+using System.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,7 +10,14 @@ builder.Services.AddRazorPages();
 
 builder.Services.AddDbContext<ExchangeServerContext>(options =>
 
-    options.UseNpgsql(builder.Configuration.GetSection("DatabaseConfig")["PostgresSQL"] ?? throw new InvalidOperationException("Connection string 'ExchangeServerContext' not found.")));
+    options.UseNpgsql(builder.Configuration.GetSection("ConnectionStrings")["ExchangeServerContext"] ?? throw new InvalidOperationException("Connection string 'ExchangeServerContext' not found.")));
+
+builder.Services.AddStackExchangeRedisCache(options =>
+{
+    options.Configuration = builder.Configuration.GetConnectionString("Redis");
+});
+
+
 
 var app = builder.Build();
 
@@ -20,6 +28,8 @@ if (!app.Environment.IsDevelopment())
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
+
+
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();

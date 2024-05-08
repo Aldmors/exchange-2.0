@@ -17,3 +17,13 @@ services:
       - ./volumes/data/db:/var/lib/postgresql/data
     ports:
        - 5432:5432
+    links:
+      - "redis_image"
+
+  redis_image:
+    image: redis
+    container_name: cache
+    ports:
+      - "6379:6379"
+
+  

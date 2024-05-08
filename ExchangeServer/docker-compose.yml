@@ -10,9 +10,9 @@ services:
   postgres:
     image: postgres
     environment:
-      - POSTGRES_USER=app
-      - POSTGRES_PASSWORD=app
-      - POSTGRES_DB=mydbname
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=ExchangeServerContext-c7b27a44-fedb-4db2-a881-95f9b7d07fec
     volumes:
       - ./volumes/data/db:/var/lib/postgresql/data
     ports:

@@ -1,0 +1,22 @@
+# This is a generated file. Not intended for manual editing.
+version: "3.4"
+services:
+  exchangeserver:
+    build:
+      context: "C:\\Users\\kubzi\\source\\repos\\exchange-2.0\\ExchangeServer"
+      dockerfile: "ExchangeServer/Dockerfile"
+      target: "base"
+    command: []
+    entrypoint:
+    - "dotnet"
+    - "/app/bin/Debug/net8.0/ExchangeServer.dll"
+    environment:
+      ASPNETCORE_STATICWEBASSETS: "/app/bin/Debug/net8.0/ExchangeServer.staticwebassets.runtime.CT.json"
+      DOTNET_USE_POLLING_FILE_WATCHER: "true"
+    image: "exchangeserver:dev"
+    ports: []
+    volumes:
+    - "C:\\Users\\kubzi\\.nuget\\packages:/home/app/.nuget/packages"
+    - "C:\\Users\\kubzi\\source\\repos\\exchange-2.0\\ExchangeServer\\ExchangeServer:/app:rw"
+    - "C:\\Users\\kubzi\\source\\repos\\exchange-2.0\\ExchangeServer:/src:rw"
+    working_dir: "/app"

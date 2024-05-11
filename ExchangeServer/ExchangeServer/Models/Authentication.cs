@@ -1,9 +1,16 @@
-﻿namespace ExchangeServer.Models
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
+
+namespace ExchangeServer.Models
 {
     public class Authentication
     {
         public int AuthenticationId { get; set; }
+        [Column(TypeName = "VARCHAR")]
+        [StringLength(250)]
         public string? Password { get; set; }
-        public string? TwoFA { get; set; }
+        [Column(TypeName = "VARCHAR")]
+        [StringLength(250)]
+        public string? TwoFa { get; set; }
     }
 }

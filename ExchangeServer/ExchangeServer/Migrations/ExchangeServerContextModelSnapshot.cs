@@ -31,12 +31,12 @@ namespace ExchangeServer.Migrations
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("AuthenticationId"));
 
                     b.Property<string>("Password")
-                        .IsRequired()
-                        .HasColumnType("text");
+                        .HasMaxLength(250)
+                        .HasColumnType("VARCHAR");
 
-                    b.Property<string>("TwoFA")
-                        .IsRequired()
-                        .HasColumnType("text");
+                    b.Property<string>("TwoFa")
+                        .HasMaxLength(250)
+                        .HasColumnType("VARCHAR");
 
                     b.HasKey("AuthenticationId");
 
@@ -52,50 +52,56 @@ namespace ExchangeServer.Migrations
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("ClientId"));
 
                     b.Property<string>("Address")
-                        .IsRequired()
-                        .HasColumnType("text");
+                        .HasMaxLength(250)
+                        .HasColumnType("VARCHAR");
 
                     b.Property<string>("City")
-                        .IsRequired()
-                        .HasColumnType("text");
+                        .HasMaxLength(250)
+                        .HasColumnType("VARCHAR");
 
                     b.Property<string>("Country")
-                        .IsRequired()
-                        .HasColumnType("text");
+                        .HasMaxLength(250)
+                        .HasColumnType("VARCHAR");
 
                     b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("text");
+                        .HasMaxLength(250)
+                        .HasColumnType("VARCHAR");
+
+                    b.Property<int>("ExternalOrderId")
+                        .HasColumnType("integer");
 
                     b.Property<string>("FirstName")
-                        .IsRequired()
-                        .HasColumnType("text");
+                        .HasMaxLength(250)
+                        .HasColumnType("VARCHAR");
 
                     b.Property<string>("Notes")
-                        .IsRequired()
-                        .HasColumnType("text");
+                        .HasMaxLength(250)
+                        .HasColumnType("VARCHAR");
 
                     b.Property<string>("Phone")
-                        .IsRequired()
-                        .HasColumnType("text");
+                        .HasMaxLength(250)
+                        .HasColumnType("VARCHAR");
 
                     b.Property<string>("PostalCode")
-                        .IsRequired()
-                        .HasColumnType("text");
+                        .HasMaxLength(250)
+                        .HasColumnType("VARCHAR");
 
                     b.Property<string>("SecondName")
-                        .IsRequired()
-                        .HasColumnType("text");
+                        .HasMaxLength(250)
+                        .HasColumnType("VARCHAR");
 
                     b.Property<string>("State")
-                        .IsRequired()
-                        .HasColumnType("text");
+                        .HasMaxLength(250)
+                        .HasColumnType("VARCHAR");
 
                     b.Property<string>("StreetNumber")
-                        .IsRequired()
-                        .HasColumnType("text");
+                        .HasMaxLength(250)
+                        .HasColumnType("VARCHAR");
 
                     b.HasKey("ClientId");
+
+                    b.HasIndex("ExternalOrderId")
+                        .IsUnique();
 
                     b.ToTable("Client");
                 });
@@ -109,26 +115,26 @@ namespace ExchangeServer.Migrations
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("DocumentId"));
 
                     b.Property<string>("AdditionalInfo")
-                        .IsRequired()
-                        .HasColumnType("text");
+                        .HasMaxLength(250)
+                        .HasColumnType("VARCHAR");
 
                     b.Property<DateTime>("CreateTime")
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("DocumentName")
-                        .IsRequired()
-                        .HasColumnType("text");
+                        .HasMaxLength(250)
+                        .HasColumnType("VARCHAR");
 
                     b.Property<int>("ShipmentId")
                         .HasColumnType("integer");
 
                     b.Property<string>("Status")
-                        .IsRequired()
-                        .HasColumnType("text");
+                        .HasMaxLength(250)
+                        .HasColumnType("VARCHAR");
 
                     b.Property<string>("Type")
-                        .IsRequired()
-                        .HasColumnType("text");
+                        .HasMaxLength(250)
+                        .HasColumnType("VARCHAR");
 
                     b.HasKey("DocumentId");
 
@@ -145,16 +151,17 @@ namespace ExchangeServer.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("ExternalOrderId"));
 
-                    b.Property<int>("ClientId1")
-                        .HasColumnType("integer");
-
                     b.Property<string>("OrderId")
-                        .IsRequired()
-                        .HasColumnType("text");
+                        .HasMaxLength(250)
+                        .HasColumnType("VARCHAR");
+
+                    b.Property<int>("ShipmentId")
+                        .HasColumnType("integer");
 
                     b.HasKey("ExternalOrderId");
 
-                    b.HasIndex("ClientId1");
+                    b.HasIndex("ShipmentId")
+                        .IsUnique();
 
                     b.ToTable("ExternalOrder");
                 });
@@ -168,19 +175,21 @@ namespace ExchangeServer.Migrations
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("GroupId"));
 
                     b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("text");
+                        .HasMaxLength(250)
+                        .HasColumnType("VARCHAR");
 
                     b.Property<string>("GroupName")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasMaxLength(250)
+                        .HasColumnType("VARCHAR");
 
-                    b.Property<int>("PermissionId")
+                    b.Property<int>("UserId")
                         .HasColumnType("integer");
 
                     b.HasKey("GroupId");
 
-                    b.HasIndex("PermissionId");
+                    b.HasIndex("UserId")
+                        .IsUnique();
 
                     b.ToTable("Group");
                 });
@@ -194,25 +203,31 @@ namespace ExchangeServer.Migrations
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("LabelId"));
 
                     b.Property<string>("Country")
-                        .IsRequired()
-                        .HasColumnType("text");
+                        .HasMaxLength(250)
+                        .HasColumnType("VARCHAR");
 
                     b.Property<DateTime>("CreateTime")
                         .HasColumnType("timestamp with time zone");
 
+                    b.Property<int>("ShipmentId")
+                        .HasColumnType("integer");
+
                     b.Property<string>("ShippingId")
-                        .IsRequired()
-                        .HasColumnType("text");
+                        .HasMaxLength(250)
+                        .HasColumnType("VARCHAR");
 
                     b.Property<string>("ShippingType")
-                        .IsRequired()
-                        .HasColumnType("text");
+                        .HasMaxLength(250)
+                        .HasColumnType("VARCHAR");
 
                     b.Property<string>("Status")
-                        .IsRequired()
-                        .HasColumnType("text");
+                        .HasMaxLength(250)
+                        .HasColumnType("VARCHAR");
 
                     b.HasKey("LabelId");
+
+                    b.HasIndex("ShipmentId")
+                        .IsUnique();
 
                     b.ToTable("Label");
                 });
@@ -246,6 +261,9 @@ namespace ExchangeServer.Migrations
                     b.Property<bool>("EditUsers")
                         .HasColumnType("boolean");
 
+                    b.Property<int>("GroupId")
+                        .HasColumnType("integer");
+
                     b.Property<bool>("Packaging")
                         .HasColumnType("boolean");
 
@@ -255,7 +273,16 @@ namespace ExchangeServer.Migrations
                     b.Property<bool>("Statistics")
                         .HasColumnType("boolean");
 
+                    b.Property<int>("UserId")
+                        .HasColumnType("integer");
+
                     b.HasKey("PermissionId");
+
+                    b.HasIndex("GroupId")
+                        .IsUnique();
+
+                    b.HasIndex("UserId")
+                        .IsUnique();
 
                     b.ToTable("Permission");
                 });
@@ -271,26 +298,11 @@ namespace ExchangeServer.Migrations
                     b.Property<DateTime>("CreateTime")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<int>("ExOrderIdExternalOrderId")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("LabelId1")
-                        .HasColumnType("integer");
-
                     b.Property<string>("Status")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<int>("UserId1")
-                        .HasColumnType("integer");
+                        .HasMaxLength(250)
+                        .HasColumnType("VARCHAR");
 
                     b.HasKey("ShipmentId");
-
-                    b.HasIndex("ExOrderIdExternalOrderId");
-
-                    b.HasIndex("LabelId1");
-
-                    b.HasIndex("UserId1");
 
                     b.ToTable("Shipment");
                 });
@@ -303,46 +315,55 @@ namespace ExchangeServer.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("UserId"));
 
+                    b.Property<int?>("AuthenticationId")
+                        .HasColumnType("integer");
+
                     b.Property<DateTime>("CreateTime")
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("text");
+                        .HasMaxLength(250)
+                        .HasColumnType("VARCHAR");
 
                     b.Property<string>("ExternalId")
-                        .IsRequired()
-                        .HasColumnType("text");
+                        .HasMaxLength(250)
+                        .HasColumnType("VARCHAR");
 
                     b.Property<string>("FirstName")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<int>("GroupId")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("PasswordAuthenticationId")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("PermissionId")
-                        .HasColumnType("integer");
+                        .HasMaxLength(250)
+                        .HasColumnType("VARCHAR");
 
                     b.Property<string>("SecondName")
-                        .IsRequired()
-                        .HasColumnType("text");
+                        .HasMaxLength(250)
+                        .HasColumnType("VARCHAR");
 
-                    b.Property<int>("Status")
+                    b.Property<int>("ShipmentId")
                         .HasColumnType("integer");
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasMaxLength(250)
+                        .HasColumnType("VARCHAR");
 
                     b.HasKey("UserId");
 
-                    b.HasIndex("GroupId");
+                    b.HasIndex("AuthenticationId");
 
-                    b.HasIndex("PasswordAuthenticationId");
-
-                    b.HasIndex("PermissionId");
+                    b.HasIndex("ShipmentId")
+                        .IsUnique();
 
                     b.ToTable("User");
+                });
+
+            modelBuilder.Entity("ExchangeServer.Models.Client", b =>
+                {
+                    b.HasOne("ExchangeServer.Models.ExternalOrder", "ExternalOrder")
+                        .WithOne("Client")
+                        .HasForeignKey("ExchangeServer.Models.Client", "ExternalOrderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ExternalOrder");
                 });
 
             modelBuilder.Entity("ExchangeServer.Models.Document", b =>
@@ -358,83 +379,99 @@ namespace ExchangeServer.Migrations
 
             modelBuilder.Entity("ExchangeServer.Models.ExternalOrder", b =>
                 {
-                    b.HasOne("ExchangeServer.Models.Client", "ClientId")
-                        .WithMany()
-                        .HasForeignKey("ClientId1")
+                    b.HasOne("ExchangeServer.Models.Shipment", "Shipment")
+                        .WithOne("ExternalOrder")
+                        .HasForeignKey("ExchangeServer.Models.ExternalOrder", "ShipmentId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("ClientId");
+                    b.Navigation("Shipment");
                 });
 
             modelBuilder.Entity("ExchangeServer.Models.Group", b =>
                 {
-                    b.HasOne("ExchangeServer.Models.Permission", "Permission")
-                        .WithMany()
-                        .HasForeignKey("PermissionId")
+                    b.HasOne("ExchangeServer.Models.User", "User")
+                        .WithOne("Group")
+                        .HasForeignKey("ExchangeServer.Models.Group", "UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Permission");
+                    b.Navigation("User");
                 });
 
-            modelBuilder.Entity("ExchangeServer.Models.Shipment", b =>
+            modelBuilder.Entity("ExchangeServer.Models.Label", b =>
                 {
-                    b.HasOne("ExchangeServer.Models.ExternalOrder", "ExOrderId")
-                        .WithMany()
-                        .HasForeignKey("ExOrderIdExternalOrderId")
+                    b.HasOne("ExchangeServer.Models.Shipment", "Shipment")
+                        .WithOne("Label")
+                        .HasForeignKey("ExchangeServer.Models.Label", "ShipmentId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("ExchangeServer.Models.Label", "LabelId")
-                        .WithMany()
-                        .HasForeignKey("LabelId1")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("ExchangeServer.Models.User", "UserId")
-                        .WithMany()
-                        .HasForeignKey("UserId1")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("ExOrderId");
-
-                    b.Navigation("LabelId");
-
-                    b.Navigation("UserId");
+                    b.Navigation("Shipment");
                 });
 
-            modelBuilder.Entity("ExchangeServer.Models.User", b =>
+            modelBuilder.Entity("ExchangeServer.Models.Permission", b =>
                 {
                     b.HasOne("ExchangeServer.Models.Group", "Group")
-                        .WithMany()
-                        .HasForeignKey("GroupId")
+                        .WithOne("Permission")
+                        .HasForeignKey("ExchangeServer.Models.Permission", "GroupId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("ExchangeServer.Models.Authentication", "Password")
-                        .WithMany()
-                        .HasForeignKey("PasswordAuthenticationId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("ExchangeServer.Models.Permission", "Permission")
-                        .WithMany()
-                        .HasForeignKey("PermissionId")
+                    b.HasOne("ExchangeServer.Models.User", "User")
+                        .WithOne("Permission")
+                        .HasForeignKey("ExchangeServer.Models.Permission", "UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Group");
 
-                    b.Navigation("Password");
+                    b.Navigation("User");
+                });
 
+            modelBuilder.Entity("ExchangeServer.Models.User", b =>
+                {
+                    b.HasOne("ExchangeServer.Models.Authentication", "Authentication")
+                        .WithMany()
+                        .HasForeignKey("AuthenticationId");
+
+                    b.HasOne("ExchangeServer.Models.Shipment", "Shipment")
+                        .WithOne("User")
+                        .HasForeignKey("ExchangeServer.Models.User", "ShipmentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Authentication");
+
+                    b.Navigation("Shipment");
+                });
+
+            modelBuilder.Entity("ExchangeServer.Models.ExternalOrder", b =>
+                {
+                    b.Navigation("Client");
+                });
+
+            modelBuilder.Entity("ExchangeServer.Models.Group", b =>
+                {
                     b.Navigation("Permission");
                 });
 
             modelBuilder.Entity("ExchangeServer.Models.Shipment", b =>
                 {
                     b.Navigation("Documents");
+
+                    b.Navigation("ExternalOrder");
+
+                    b.Navigation("Label");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("ExchangeServer.Models.User", b =>
+                {
+                    b.Navigation("Group");
+
+                    b.Navigation("Permission");
                 });
 #pragma warning restore 612, 618
         }

@@ -14,6 +14,8 @@ RUN dotnet restore "./ExchangeServer/ExchangeServer.csproj"
 COPY . .
 WORKDIR "/src/ExchangeServer"
 RUN dotnet build "./ExchangeServer.csproj" -c $BUILD_CONFIGURATION -o /app/build
+ENV PATH="$PATH:/root/.dotnet/tools"
+RUN dotnet ef database update
 
 FROM build AS publish
 ARG BUILD_CONFIGURATION=Release

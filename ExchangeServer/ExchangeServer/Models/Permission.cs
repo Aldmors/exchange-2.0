@@ -2,6 +2,7 @@
 {
     public class Permission
     {
+
         public int PermissionId { get; set; }
         public bool Statistics { get; set; }
         public bool CreateUsers { get; set; }
@@ -14,5 +15,9 @@
         public bool Packaging { get; set; }
         public bool Admin { get; set; }
 
+        public int GroupId { get; set; }
+        public Group Group { get; set; } = null!;
+        public int UserId { get; set; }
+        public User User { get; set; } = null!;
     }
 }

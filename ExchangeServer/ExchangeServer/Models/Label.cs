@@ -5,6 +5,7 @@ namespace ExchangeServer.Models
 {
     public class Label
     {
+
         public int LabelId { get; set; }
         [Column(TypeName = "VARCHAR")]
         [StringLength(250)]
@@ -19,5 +20,8 @@ namespace ExchangeServer.Models
         [StringLength(250)]
         public string? Country { get; set; }
         public DateTime CreateTime { get; set; }
+
+        public int ShipmentId { get; set; }
+        public Shipment Shipment { get; set; } = null!;
     }
 }

@@ -16,15 +16,20 @@ namespace ExchangeServer.Models
         [StringLength(250)]
         public string? SecondName { get; set; }
         [Column(TypeName = "VARCHAR")]
-        [StringLength(250)]
+        [StringLength(250)] 
         public string? Email { get; set; }
-        public Authentication? Password { get; set; }
-        public Permission? Permission { get; set; }
-        public Group? Group { get; set; }
+       
         [Column(TypeName = "VARCHAR")]
         [StringLength(250)]
         public int Status { get; set; }
         public DateTime CreateTime { get; set; }
+
+
+        public Authentication? Authentication { get; set; }
+        public Permission? Permission { get; set; }
+        public Group? Group { get; set; }
+        public int ShipmentId { get; set; }
+        public Shipment Shipment { get; set; } = null!;
 
     }
 }

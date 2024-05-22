@@ -5,6 +5,7 @@ namespace ExchangeServer.Models
 {
     public class Client
     {
+
         public int ClientId { get; set; }
         [Column(TypeName = "VARCHAR")]
         [StringLength(250)]
@@ -39,5 +40,8 @@ namespace ExchangeServer.Models
         [Column(TypeName = "VARCHAR")]
         [StringLength(250)]
         public string? Notes { get; set; }
+
+        public int ExternalOrderId { get; set; }
+        public ExternalOrder ExternalOrder { get; set; }  = null!;
     }
 }

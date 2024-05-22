@@ -5,9 +5,10 @@ namespace ExchangeServer.Models
 {
     public class Document
     {
+
         public int DocumentId { get; set; }
         public int ShipmentId { get; set; }
-        public Shipment? Shipment { get; set; }
+        public Shipment Shipment { get; set; } = null!;
         [Column(TypeName = "VARCHAR")]
         [StringLength(250)]
         public string? DocumentName { get; set; }
